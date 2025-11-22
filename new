@@ -1,0 +1,27 @@
+function vowelCount(word) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  let count = 0;
+  for (let i = 0; i < word.length; i++) {
+    if (vowels.includes(word[i])) {
+      count += 1;
+    }
+  }
+  return count;
+}
+
+console.log(vowelCount("turbo"));
+
+function vowelEnd(word) {
+  const vowel = "aeiouAEIOU";
+  for (let i = word.length - 1; i >= 0; i--) {
+    if (vowel.includes(word[word.length - 1])) {
+      return `${word}${word}`;
+    } else if (vowel.includes(word[i])) {
+      return `${word}${word.slice(i)}`;
+    }
+  }
+}
+
+console.log(vowelEnd("history"));
+console.log(vowelEnd("like"));
+console.log(vowelEnd("blink"));
